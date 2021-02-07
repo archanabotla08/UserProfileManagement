@@ -6,7 +6,16 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/app/app.module.ts",
+    "src/app/app-routing.module.ts",
+    "src/environments/environment.ts",
+    "src/app/app.component.ts",
+    "src/app/user-profile/user-profile.component.ts",
+    "src/app/services/user-profile.service.ts",
+    "src/app/model/user-profile.model.ts",
+    "src/app/customModal/custom-modal/custom-modal.component.ts",
+    "src/app/services/modal-service.service.ts"
   ],
   "include": [
     "src/**/*.d.ts"

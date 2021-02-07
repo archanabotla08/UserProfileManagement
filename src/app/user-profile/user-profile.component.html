@@ -1,0 +1,79 @@
+<div class="card" style="margin: 50px 40px 40px 40px;">
+    <div class="row" style="height: 50%;">
+        <div class="column" style="padding: 15px 15px 15px 15px;">
+            <img src="../../assets/images/smile.jpg" alt="mickey" style="background-color: red;border-radius: 5px;" width="70%"
+                height="100%">
+        </div>
+        <div class="column-right" style="padding: 50px 50px;">
+            <div class="form-group focused">
+                <label class="label-input" style="font-size: xx-large;font-weight: bolder;" for="input-username">{{ userProfile.firstName }}</label>
+            </div>
+            <div class="form-group focused" style="margin-top: 15px;font-size: larger;font-weight: bold;">
+                <label class="label-input" for="input-username">{{ userProfile.role }}</label>
+            </div>
+            <div class="form-group focused" style="margin-top: 15px;">
+                <label class="label-input" for="input-aboutUser">{{ userProfile.userName }} </label>
+            </div>
+            <div class="form-group focused" style="margin-top: 15px;">
+                <i class="fa fa-home icon"></i>
+                <label class="label-input" for="input-address" style="padding-left: 10px;">{{ userProfile.address }}</label>
+            </div>
+            <div class="form-group focused" style="margin-top: 15px;font-weight: bold;">
+                <i class="fa fa-envelope icon"></i>
+                <label class="label-input" for="input-username"
+                    style="padding-left: 10px;">{{ userProfile.email }}</label>
+
+            </div>
+            <div class="row">
+                <div class="column">
+                    <button class="btn" style="background-color: lightgrey;" (click)="openModal('custom-modal-1',userProfile)">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<jw-modal id="custom-modal-1">
+  <!-- <h1>A Custom Modal Window!</h1>
+  <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p> -->
+  <form class="form" action="#" [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+      <div class="form-group focused">
+          <label class="form-control-label" for="userName">Username</label>
+          <input type="text" (input)="userNameValidation()"  id="userName" name="userName" [(ngModel)]="userProfileData.userName" [ngModelOptions]="{standalone: true}" required
+           class="form-control form-control-alternative" placeholder="Username" >
+        </div>
+        <div class="form-group focused">
+          <label class="form-control-label" for="firstName">Firstname</label>
+          <input type="text" (input)="firstNameValidation()" id="firstName" name="firstName" [(ngModel)]="userProfileData.firstName" [ngModelOptions]="{standalone: true}" required
+           class="form-control form-control-alternative" placeholder="firstName">
+        </div>
+        <div class="form-group focused">
+          <label class="form-control-label" for="designation">Designation</label>
+          <input type="text" id="designation" name="designation" [(ngModel)]="userProfileData.designation" [ngModelOptions]="{standalone: true}" required
+           class="form-control form-control-alternative" placeholder="Designation" disabled>
+        </div>
+        <div class="form-group focused">
+          <label class="form-control-label" for="address">Address</label>
+          <input type="text" id="address" name="address" [(ngModel)]="userProfileData.address" [ngModelOptions]="{standalone: true}" required
+           class="form-control form-control-alternative" placeholder="Address">
+        </div>
+        <div class="form-group focused">
+          <label class="form-control-label" for="email">Email</label>
+          <input type="text" id="email" name="email" [(ngModel)]="userProfileData.email" [ngModelOptions]="{standalone: true}" required
+          class="form-control form-control-alternative" placeholder="email">
+        </div>
+       
+  </div>
+  <!-- <button type="submit " id="submit">Update</button>
+  <button (click)="closeModal('custom-modal-1');">Close</button> -->
+  <div class="buttonParent ">
+    <div class="submit-reset ">
+        <button class="btn " type="submit " id="submit">Update</button>
+        <button class="btn-close"  (click)="closeModal('custom-modal-1');">Close</button>
+    </div>
+</div>
+</form>
+ 
+</jw-modal>
+
